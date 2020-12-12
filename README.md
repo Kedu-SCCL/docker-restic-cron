@@ -4,6 +4,11 @@ Docker image for [restic](https://github.com/restic/restic) backup solution plus
 
 It adds the ability to schedule the backup operation running the desired restic command through standard cron lines.
 
+Use cases:
+
+* Schedule backups on a regular basis
+* Schedule backup removals on a regular basis
+
 # Usage
 
 Set up the `CRON` variable with a restic command. In this minimalistic example we will just display the restic version:
@@ -63,8 +68,6 @@ irrecoverably lost.
 
 ```
 docker run \
-  --rm \
-  -ti \
   -e AWS_ACCESS_KEY_ID=my_access_key \
   -e AWS_SECRET_ACCESS_KEY=my_secret_access_key \
   -e RESTIC_PASSWORD=my_bucket_password \
